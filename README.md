@@ -28,7 +28,7 @@ At success the links inside comments shold now be followed by two small buttons.
 * The script is not launchable through GreaseMonkey, the main function 'popupLinks()' gets defined but not started. 
 
 ##Known sites that are currently not implemented
-*Most Google-sites (tested: Search-engine, Google Drive) sans Youtube
-*Github
-*Twitch (looking for embed-format)
-*Livestream.com (automatic redirect)
+* Most Google-sites (tested: Search-engine, Google Drive) sans Youtube
+* Github
+* Twitch (looking for embed-format)
+* Livestream.com (automatic redirect)
