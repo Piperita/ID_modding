@@ -28,6 +28,7 @@ At success the links inside comments shold now be followed by two small buttons.
 * The script is not launchable through GreaseMonkey, the main function 'popupLinks()' gets defined but not started. 
 
 ##Known sites that are currently not implemented
+* Derpyboo.ru mainsite, potentially unfixable (embeddable version has the date in its url which is missing from the main-url)
 * Most Google-sites (tested: Search-engine, Google Drive) sans Youtube
 * Github
 * Twitch (looking for embed-format)
