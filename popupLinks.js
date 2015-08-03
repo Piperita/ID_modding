@@ -41,7 +41,7 @@ function clickShowButton(instance) {
         ausl     = instance.previousSibling.href.replace("?m=0", "?m=1");
         instance.nextSibling.nextSibling.src = ausl  
         instance.nextSibling.nextSibling.style.display = 'block'
-      //If main site return mobile ---> no height adjustment?????
+      //If main site return mobile
       } else if (/.*equestriadaily\.com\/?$/.test(instance.previousSibling.href) == true) { 
         ausl     = instance.previousSibling.href.replace(".com/", ".com").replace(".com", ".com?m=1");
         instance.nextSibling.nextSibling.src = ausl
@@ -64,8 +64,16 @@ function clickShowButton(instance) {
 
 //Adds elements
 function popupLinks() {
-  $('.idc-c-t-inner').find('a').after("<iframe id='frameBoard' class='popClass' src='about:blank' width = '100%'></iframe>");
-  $('.idc-c-t-inner').find('a').after("<button type='button' onclick='clickHideButton(this)'>-</button>")
-  $('.idc-c-t-inner').find('a').after("<button type='button' onclick='clickShowButton(this)'>+</button>")
+  $('.idc-c-t-inner').find('a').after("<iframe id='frameBoard' class='popClass' src='about:blank'></iframe>");
+  frameWidth =$('.popClass'); frameClass=frameWidth;
+  frameWidth =frameWidth[0].parentElement.clientWidth;
+  frameHeight=parseInt(frameWidth*0.5625)+'px';
+  frameWidth =parseInt(frameWidth)+'px';
+  frameClass.css('width', frameWidth).css('height', frameHeight);
+  $('.idc-c-t-inner').find('a').after("<button type='button' onclick='clickHideButton(this)' class='popBut'>-</button>")
+  $('.idc-c-t-inner').find('a').after("<button type='button' onclick='clickShowButton(this)' class='popBut'>+</button>")
   $('.popClass').css({display: 'none'})
-}
+  $('.popBut').css('color','#154A7F').css('backgroundColor','#eeeeee').css('font-weight','700').css('fontSize','9px')
+};
+
+popupLinks();
