@@ -5,7 +5,6 @@ function clickHideButton(instance) {
 
 //functionality show-button
 function clickShowButton(instance) {
-  instance.nextSibling.nextSibling.height = (parseInt($('.popClass').outerWidth()*0.5625))+'px';
   //Youtube
   if (/.*[Yy]outube.*/.test(instance.previousSibling.href) == true && /.*m\.[Yy]outube.*/.test(instance.previousSibling.href) == false) {
     ausl    = instance.previousSibling.href.replace("watch?v=", "embed/");
