@@ -53,3 +53,5 @@ function getPoster(){
 
 getPoster();
 ```
+##Problems
+*Comments must be closed to be counted (will be fixed in next update). Kight's close-function does not work as it re-assigns the 'closed'-class to every thread.
