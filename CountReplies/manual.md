@@ -15,7 +15,7 @@ Depending on the page this script is used on, it might thus take some time to fi
 
 ####Change delay in loading the next page
 Depending on the connection, the script could run a bit slow or cause errors as the navbar needed for page-progression gets loaded quite late into the page. 
-If an error is caused, increase the value on the setTimeout()-function (standard: 3000 milliseconds), on faster connections you might decrease it insted
+If an error is caused, increase the value on the setTimeout()-function (standard: 3000 milliseconds), on faster connections you might decrease it instead. 
 
 ####Only crawl through active page
 Use the following code (with text):
