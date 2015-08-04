@@ -38,7 +38,6 @@ function getPoster(){
         }
         $('#idc-commentcount').append(csvElement);
     }
-
     if (a.nextSibling.className != 'idc-clear') {
       myVar = setTimeout(function(){ 
         getPoster()
