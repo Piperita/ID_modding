@@ -54,4 +54,6 @@ function getPoster(){
 getPoster();
 ```
 ##Problems
-*Comments must be closed to be counted (will be fixed in next update). Kight's close-function does not work as it re-assigns the 'closed'-class to every thread.
+* Comments must be closed to be counted (will be fixed in next update). Kight's close-function does not work as it re-assigns the 'closed'-class to every thread.
+* Does only count registered users as the data for Anons or users from Facebook/Twitter/Instagram is stored differently. Might be fixed if the need arises
+* Does not count 'empty' threads, i.e. posts without replies. As the origin of this script was to count what makes a reply-worthy post, I deliberately avoided them for now. 
