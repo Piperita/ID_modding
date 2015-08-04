@@ -26,7 +26,7 @@ function getPoster(){
     if (a.nextSibling.className != 'idc-clear') {
       a.nextSibling.click();
     } else {
-        formf[0] = "replies\tauthor"
+        formf[0] = "replies\tauthor\tcomment"
         formf = formf.filter(Boolean)
         formf = formf.join("\n")
         var csvElement = document.createElement('a');
