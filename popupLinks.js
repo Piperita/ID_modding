@@ -75,6 +75,12 @@ function popupLinks() {
   $('.popBut').css('color','#154A7F').css('backgroundColor','#eeeeee').css('font-weight','700').css('fontSize','9px')
 };
 
-var ttt = setTimeout(function(){
-  popupLinks();
-},500)
+popupLinks();
+IDPL1 = IDPageLoad
+function IDPL(page,nextprev,commentid,gotocomments){
+	 IDPL1(page,nextprev,commentid,gotocomments);
+    var ttt = setTimeout(function(){
+	      popupLinks();
+    },1000)
+}
+IDPageLoad = IDPL
