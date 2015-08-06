@@ -2,14 +2,16 @@
 //----RAW: Delete Filter|     paths and replace the word. Then remove the "postComment"-orders from all else-paths not 
 //-----------------------     belonging to the last if-path for both types of boxes!
 
-function test(){
-  //---------------------
-  //Box for new Comments|
-  //---------------------
-  if (x.contains('socialist')){                                                     //Check for word!
-	x=x.replace('socialist','socia<b></b>list');                                      //Check for word!
-        if (x.contains('socialist')){                                               //Check for word!
-		test();
+
+
+//---------------------
+//Box for new Comments|
+//---------------------
+function newBox(){
+  if (x.contains('cialis')){                                                     //Check for word!
+	x=x.replace('cialis','cia<b></b>lis');                                   //Check for word!
+        if (x.contains('cialis')){                                               //Check for word!
+		newBox();
 	} else {
           document.getElementById("IDCommentNewThreadText").value = x  
           postComment(0);
@@ -17,16 +19,18 @@ function test(){
   } else{
     postComment(0);
   }
+}
 
-  //----------------
-  //Box for replies|
-  //----------------                                                 
-  if (y.contains('socialist')){                                                   //Check for word!               
-	y=y.replace('socialist','socia<b></b>list');                                    //Check for word!
-        if (y.contains('socialist')){                                             //Check for word!
-		test();
+//----------------
+//Box for replies|
+//----------------                                                 
+function replyBox(){
+  if (y.contains('cialis')){                                                   //Check for word!               
+	y=y.replace('cialis','cia<b></b>lis');                                 //Check for word!
+        if (y.contains('cialis')){                                             //Check for word!
+		replyBox();
 	} else {
-          document.getElementById("IDCommentNewThreadText").value = x  
+          document.getElementById("txtComment").value = y
           postComment(1);
  	}   	   	     
   } else{
@@ -34,13 +38,24 @@ function test(){
   }
 }
 
-//defines elements, starts filtering
-function startFilter(){
+//-----------
+//Launch New|
+//----------- 
+function startFilterNew(){
   x= document.getElementById("IDCommentNewThreadText").value
-  y= document.getElementById("txtComment").value
-  test()
+  newBox()
 }
 
-//replaces functions on submit-button with function                  
-   buttonNew=$('#IDNewThreadSubmitLI')[0].children[0].href="javascript: startFilter()"
-   buttonRep=$('#IDReplyDivSubmitLIButton')[0].href="javascript: startFilter()"
+//---------------
+//Launch Replies|
+//--------------- 
+function startFilterRep(){
+  y= document.getElementById("txtComment").value
+  replyBox()
+}
+
+//--------------------
+//Button-functionality|
+//--------------------                  
+   buttonNew=$('#IDNewThreadSubmitLI')[0].children[0].href="javascript: startFilterNew()"
+   buttonRep=$('#IDReplyDivSubmitLIButton')[0].href="javascript: startFilterRep()"
