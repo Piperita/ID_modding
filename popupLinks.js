@@ -75,7 +75,9 @@ function popupLinks() {
   $('.popBut').css('color','#154A7F').css('backgroundColor','#eeeeee').css('font-weight','700').css('fontSize','9px')
 };
 
-popupLinks();
+var lll = setTimeout(function(){
+	popupLinks();
+},500)
 IDPL1 = IDPageLoad
 function IDPL(page,nextprev,commentid,gotocomments){
 	 IDPL1(page,nextprev,commentid,gotocomments);
