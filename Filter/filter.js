@@ -99,8 +99,8 @@ function startFilterRep(){
 //--------------------
 //Button-functionality|
 //--------------------                  
-   buttonNew=$('#IDNewThreadSubmitLI')[0].children[0].href="javascript: startFilterNew()"
-   buttonRep=$('#IDReplyDivSubmitLIButton')[0].href="javascript: startFilterRep()"
+buttonNew=$('#IDNewThreadSubmitLI')[0].children[0].href="javascript: startFilterNew()"
+buttonRep=$('#IDReplyDivSubmitLIButton')[0].href="javascript: startFilterRep()"
 
 
 id_add_action('comment_post', function(pageObj) {
