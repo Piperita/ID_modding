@@ -31,7 +31,7 @@ function getPoster(){
 //    console.log("Page " + (currentPage+1));
 }
 
-//IntenseDebate action that fires after a new comment page has been loaded.
+//IntenseDebate action that fires after a new comment page has been loaded. Structure from DarknessKight (https://github.com/Darknesskight)
 function getReplies(){
   id_add_action('page_load', function(pageObj) {
     getPoster();
