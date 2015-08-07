@@ -1,21 +1,17 @@
 ##What do these files do?
-Upon activatation, they crawl a given ID-page (with EQD's relations between elements) for any post by a registered user with replies on the active and all subsequent pages. They then save the amount of replies, the poster's name and (in count_withText.js) the comment's contents to a csv-file that can be downloaded when clicking the new Element next to the post-counter.
+Upon activatation, they crawl a given ID-page (with EQD's relations between elements) for any post by a registered user with replies on the active and all subsequent pages. They then save the amount of replies, the poster's name and (in count_withText.js) the comment's contents to a csv-file that can be downloaded when clicking the new element next to the post-counter.
 
 ##Using the files
-Copy the code and paste them into the console (Ctrl+Shift+I), the scipt then should run on its own.
-
-## Difference of both versions
-Both scripts yield the same results, the difference is how they are iterated: The 'normal' version checks for the next element in the nav-bar, the 'loop'-version manually loads all pages. 
-
-The normal version is better to get results from the current page onwards as it only links forwards, whereas the looped version always loads the current page and the pages two to the end. Another difference lies in error-handling: The looped version causes no errors when the counter is set too low or the page just won't load but may yeld some 'double' entries, whereas the normal version may stop when it gets to act before .idc-sel is selected.
+Copy the code and paste them into the console (Ctrl+Shift+I), the script then should run on its own.
+Alternatively, run the following script
+```
+//CountReplies
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/CountReplies/counter.js";}());
+```
 
 ##General aspects
-On multi-paged threads the function will reload the next page (if available) every three seconds until all pages are crawled through.
-Depending on the page this script is used on, it might thus take some time to finish
-
-####Change delay in loading the next page
-Depending on the connection, the script could run a bit slow or cause errors as the navbar needed for page-progression gets loaded quite late into the page. 
-If an error is caused, increase the value on the setTimeout()-function (standard: 3000 milliseconds), on faster connections you might decrease it instead. 
+On multi-paged threads the function will reload the next page (if available) as soon as possible until all pages are crawled through.
+Depending on the page this script is used on and other scripts being run, it might thus take some time to finish
 
 ####Only crawl through active page
 Use the following code (with text):
