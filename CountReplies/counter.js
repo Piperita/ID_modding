@@ -1,11 +1,20 @@
+var currentPage = 0;
 var formf =   [];
+var formx =   [];
+var author = [];
+var replies= [];
+var form =   [];
+var text = [];
+var lastAction
+var csvElement = document.createElement('a');
+var c
 
 function getPoster(){
   c=$('.idc-collapselink_closed')
-  var author = [];
-  var replies= [];
-  var form =   [];
-  var text = [];
+  author = [];
+  replies= [];
+  form =   [];
+  text = [];
   for (i = 1; i < c.length; i++) { 
     if (!c[i].parentElement.parentElement.parentElement.children[0].classList.contains ('idc-twitter') && !c[i].parentElement.parentElement.parentElement.children[0].classList.contains ('idc-anonymous')) {
       author[i] = c[i].parentElement.parentElement.parentElement.children[0].children[0].children[0].children[3].children[0].innerHTML;
@@ -19,48 +28,53 @@ function getPoster(){
     }
   } 
   formf = formf.concat(form);
-
-  if ($('#idc-pager').length > 0){
-    a=$('.idc-sel')
-    a=a[a.length-1]
-    if (a.nextSibling.className != 'idc-clear') {
-      a.nextSibling.click();
-    } else {
-        formf[0] = "replies\tauthor\tcomment"
-        formf = formf.filter(Boolean)
-        formf = formf.join("\n")
-        var csvElement = document.createElement('a');
-        csvElement.id = 'csv_download'
-        csvElement.innerHTML = " (Download CSV)";
-        csvElement.href     = 'data:application/csv;charset=utf-8,' + encodeURIComponent(formf);
-        csvElement.target   = '_blank';
-        csvElement.download = 'myFile.csv';
-        if ($('#csv_download').length >0){
-          $('#csv_download').remove()
-        }
-        $('#idc-commentcount').append(csvElement);
-    }
-
-    if (a.nextSibling.className != 'idc-clear') {
-      myVar = setTimeout(function(){ 
-        getPoster()
-      }, 3000);
-    }
-  } else {
-        formf[0] = "replies\tauthor\ttext"
-        formf = formf.filter(Boolean)
-        formf = formf.join("\n")
-        var csvElement = document.createElement('a');
-        csvElement.id = 'csv_download'
-        csvElement.innerHTML = " (Download CSV)";
-        csvElement.href     = 'data:application/csv;charset=utf-8,' + encodeURIComponent(formf);
-        csvElement.target   = '_blank';
-        csvElement.download = 'myFile.csv';
-        if ($('#csv_download').length >0){
-          $('#csv_download').remove()
-        }
-        $('#idc-commentcount').append(csvElement);
-  }
+//    console.log("Page " + (currentPage+1));
 }
 
-getPoster();
+//IntenseDebate action that fires after a new comment page has been loaded.
+function getReplies(){
+  id_add_action('page_load', function(pageObj) {
+    getPoster();
+    
+    //If there is another page, load it.
+    if($('#idc-pager .idc-sel').next('a').length) {
+        currentPage++;
+//         console.log(currentPage+'         '+'nextpage')
+        IDPageLoad(currentPage);
+    } else {
+        //Remove the action we added.
+        lastAction = id_action_list['page_load'].length-1;
+        id_action_list['page_load'][lastAction] = undefined
+        formf[0] = "replies\tauthor\tcomment"
+//        console.log(formx.length)
+//        console.log(currentPage+'         '+'end')
+        formx = formf.filter(Boolean)
+        formx = formx.join("\n")
+        csvElement.id = 'csv_download'
+        csvElement.innerHTML = " (Download CSV)";
+        csvElement.href     = 'data:application/csv;charset=utf-8,' + encodeURIComponent(formx);
+        csvElement.target   = '_blank';
+        csvElement.download = 'myFile.csv';
+        if ($('#csv_download').length >0){
+          $('#csv_download').remove()
+        }
+        $('#idc-commentcount').append(csvElement);
+    }
+  });
+
+   //In case we are not on the first page already.
+   IDPageLoad(currentPage);
+}
+
+function launchRepl(){
+  currentPage = 0;
+  formf =   [];
+  formx =   [];
+  getReplies();
+}
+
+var countLink = document.createElement('a');
+countLink.id = 'countLink'
+countLink.innerHTML = "Get Replies";
+countLink.href     = 'javascript: launchRepl()'
+$('#idc-sortLinks').children().append("|For Bluefury: ").append(countLink).append ('(max. 2x)')
