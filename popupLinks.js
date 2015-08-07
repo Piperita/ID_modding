@@ -75,14 +75,6 @@ function popupLinks() {
   $('.popBut').css('color','#154A7F').css('backgroundColor','#eeeeee').css('font-weight','700').css('fontSize','9px')
 };
 
-var lll = setTimeout(function(){
+id_add_action('page_load', function(pageObj) {
 	popupLinks();
-},500)
-IDPL1 = IDPageLoad
-function IDPL(page,nextprev,commentid,gotocomments){
-	 IDPL1(page,nextprev,commentid,gotocomments);
-    var ttt = setTimeout(function(){
-	      popupLinks();
-    },1000)
-}
-IDPageLoad = IDPL
+})
