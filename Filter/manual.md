@@ -16,9 +16,6 @@ javascript:(function(){document.head.appendChild(document.createElement("script"
 * pharmacy
 * viagra
 
-## Updating the wordlist
-Copy an if-path (without a postComment-order) from both box-types and change the words being checked and replaced. The lines to be changed are marked as such.
-
 ## Upcoming features
 - Checking comments out of the edit-box
 - more words to be checked and replaced
