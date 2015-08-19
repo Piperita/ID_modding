@@ -78,3 +78,7 @@ function popupLinks() {
 id_add_action('page_load', function(pageObj) {
 	popupLinks();
 })
+
+id_add_action('idcomments_func_load', function(pageObj) {
+	popupLinks();
+})
