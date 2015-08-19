@@ -13,7 +13,7 @@ javascript:(function(){document.head.appendChild(document.createElement("script"
 ####Script for edited posts (beta)
 Activate the following script like the 'normal' script:
 ``` Javascript
-javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://gist.githubusercontent.com/Piperita/29650c1803248c537291/raw/1d5ebecc82ca8ff4343b70f43434cff2eeda72a0/FilterEdit.js";}());
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Filter/filter_edit.js";}());
 ```
 This will also catch posts from the edit-textbox and change offending words. In the moment it might not start on the initil pageload or only after a circumventing prompt, like a manual start of the function editSave() from the console or a delayed start from GreaseMonkey:
 ``` Javascript
@@ -23,7 +23,6 @@ var lll = setTimeout(function(){
 ```
 
 It will definitely work if a page_load-signal has been sent to ID (loading a new page, sorting comments, firing the IDPageload()-command or reloading the page with a selected comment(?)).
-
 
 ## currently caught words
 * patreon
