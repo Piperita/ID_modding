@@ -1,5 +1,5 @@
 ## What this script does
-Before a post is sent, this script checks if any forbidden words are inside the commentBox and automatically makes them postable by adding an empty symbol inside the substring before sending the post off.
+Before a post is sent, this script checks if any forbidden words are inside the commentBox and automatically makes them postable by adding an empty symbol inside the substring before sending the post off. 
 
 ##Activating the script
 The script can be activated by the following code in three variants:
@@ -11,6 +11,7 @@ javascript:(function(){document.head.appendChild(document.createElement("script"
 3. Copy and paste it into a GreaseMonkey-Script
 
 ## currently caught words
+* patreon
 * cialism
 * cialist
 * pharmacy
