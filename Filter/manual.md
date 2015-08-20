@@ -31,6 +31,7 @@ It will definitely work if a page_load-signal has been sent to ID (loading a new
 * carrier
 * pharmacy
 * viagra
+* cock
 
 ## Upcoming features
 - integrate edit-function into main-script
