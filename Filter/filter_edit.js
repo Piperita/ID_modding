@@ -18,6 +18,9 @@ function editSave() {
 	  ff = ff.replace('viagra','via<b></b>gra'); 
 	  ff = ff.replace('cialis','cia<b></b>lis');
 	  ff = ff.replace('patreon','pat<b></b>reon');
+	  ff = ff.replace('carrier','car<b></b>rier');
+	  ff = ff.replace('cock','co<b></b>ck');
+	  
 	  $id("IDEditCommentTextArea"+commentid).value = ff
     //--------------------------------------
     //End_Area
