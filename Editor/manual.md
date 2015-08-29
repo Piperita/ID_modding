@@ -45,3 +45,4 @@ var lll = setTimeout(function(){
 * New method of launching script
 * Better symbols for buttons
 * Preview working better with lists (currently they need to be posted in one line, otherwise they have one blank line between each entry)
+* add easy-access to the emotes from Ponydebate
