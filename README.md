@@ -7,6 +7,9 @@ They were created as add-ons to DarknessKight's <a href="https://github.com/Dark
 All scripts have a dedicated manual inside their folder. 
 Their general functions are:
 
+#### Editor
+Adds buttons to the textareas for easy html-tagging
+
 #### Filter
 Circumvents the filter to allow banned words by adding empty characters inside the offensive substring.
 
