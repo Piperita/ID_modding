@@ -88,6 +88,7 @@ $('#dialog')[0].style.width = $('#idc-container')[0].clientWidth+'px'
 //------------------------
 //CSS for buttons---------
 //------------------------
+var eee = setTimeout(function(){
     a=$('#ButtonContainerNew')[0].children
     for (i=0;i<a.length-1;i++){
       a[i].style.backgroundColor = "greenyellow"
@@ -105,3 +106,4 @@ $('#dialog')[0].style.width = $('#idc-container')[0].clientWidth+'px'
     }  
     a[11].style.margin = "0px 3px 2px 0px"
     a[11].style.border = "1px solid black"
+},333)
