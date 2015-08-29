@@ -50,6 +50,11 @@ function unorderWord(ver){
 }
 
 function linkWord(ver, link){
+  if (link == 1){
+    link = $("#inOne")[0].value
+  } else if (link == 2){
+    link = $("#inTwo")[0].value
+  }
   var ausl = '<a href="'+link+'">'
   ver.surroundSelectedText(ausl,'</a>')
 }
@@ -64,14 +69,12 @@ document.head.appendChild(document.createElement("script")).src="https://raw.git
 //------------------------------------------------
 var xyz = $("#IDCommentNewThreadText")
 var zyx = $("#txtComment")
-var in1 = $("#inOne")[0].value
-var in2 = $("#inTwo")[0].value
 
 //-----------------------
 //Creates Button-Area----
 //-----------------------
-var cont1 =   '<div id="ButtonContainerNew"><button type="button" onclick="test(xyz)" style="">Preview</button><button type="button" onclick="strikeWord(xyz)"><strike>S</strike></button><button type="button" onclick="boldWord(xyz)"><b>B</b></button><button type="button" onclick="underlineWord(xyz)"><u>U</u></button><button type="button" onclick="italizeWord(xyz)"><i>I</i></button><button type="button" onclick="unorderWord(xyz)">*</button><button type="button" onclick="orderWord(xyz)">1</button><button type="button" onclick="spoilWord(xyz)">SP</button><button type="button" onclick="quoteWord(xyz)">Q</button><button type="button" onclick="listWord(xyz)">LI</button><button type="button" onclick="linkWord(xyz, in1)">A</button><input id="inOne" value="http://"></div>'
-var cont2 =   '<div id="ButtonContainerRep"><button type="button" onclick="test(zyx)" style="">Preview</button><button type="button" onclick="strikeWord(zyx)"><strike>S</strike></button><button type="button" onclick="boldWord(zyx)"><b>B</b></button><button type="button" onclick="underlineWord(zyx)"><u>U</u></button><button type="button" onclick="italizeWord(zyx)"><i>I</i></button><button type="button" onclick="unorderWord(zyx)">*</button><button type="button" onclick="orderWord(zyx)">1</button><button type="button" onclick="spoilWord(zyx)">SP</button><button type="button" onclick="quoteWord(zyx)">Q</button><button type="button" onclick="listWord(zyx)">LI</button><button type="button" onclick="linkWord(zyx, in2)">A</button><input id="inTwo" value="http://"></div>'
+var cont1 =   '<div id="ButtonContainerNew"><button type="button" onclick="test(xyz)" style="">Preview</button><button type="button" onclick="strikeWord(xyz)"><strike>S</strike></button><button type="button" onclick="boldWord(xyz)"><b>B</b></button><button type="button" onclick="underlineWord(xyz)"><u>U</u></button><button type="button" onclick="italizeWord(xyz)"><i>I</i></button><button type="button" onclick="unorderWord(xyz)">*</button><button type="button" onclick="orderWord(xyz)">1</button><button type="button" onclick="spoilWord(xyz)">SP</button><button type="button" onclick="quoteWord(xyz)">Q</button><button type="button" onclick="listWord(xyz)">LI</button><button type="button" onclick="linkWord(xyz, 1)">A</button><input id="inOne" value="http://"></div>'
+var cont2 =   '<div id="ButtonContainerRep"><button type="button" onclick="test(zyx)" style="">Preview</button><button type="button" onclick="strikeWord(zyx)"><strike>S</strike></button><button type="button" onclick="boldWord(zyx)"><b>B</b></button><button type="button" onclick="underlineWord(zyx)"><u>U</u></button><button type="button" onclick="italizeWord(zyx)"><i>I</i></button><button type="button" onclick="unorderWord(zyx)">*</button><button type="button" onclick="orderWord(zyx)">1</button><button type="button" onclick="spoilWord(zyx)">SP</button><button type="button" onclick="quoteWord(zyx)">Q</button><button type="button" onclick="listWord(zyx)">LI</button><button type="button" onclick="linkWord(zyx, 2)">A</button><input id="inTwo" value="http://"></div>'
 $("#IDCommentNewThreadText").before(cont1)
 $("#txtComment").before(cont2)
 
@@ -80,3 +83,4 @@ $("#txtComment").before(cont2)
 //------------------------
 var xxxxxx = '<div style="position: fixed; background: white; top: 50%; height: 33%; padding: 3px; margin: 3px; border: 7px double black; overflow: scroll; display: none" id="dialog" title="Preview"><button onclick="negTest()" style="">Hide</button><u><b>PREVIEW</b></u><br><br></div>'
 $('#idc-container').after(xxxxxx)
+$('#dialog')[0].style.width = $('#idc-container')[0].clientWidth+'px'
