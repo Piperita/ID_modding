@@ -39,12 +39,12 @@ Save the following bookmark and launch it after opening a page with the ID-comme
 
 ######Stable version
 ```javascript
-javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Editor/editor.js";}());
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://cdn.rawgit.com/Piperita/PD_previewLinks/master/Editor/editor.js";}());
 ```
 
 ######Beta version
 ```javascript
-javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Editor/editor_beta.js";}());
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://cdn.rawgit.com/Piperita/PD_previewLinks/master/Editor/editor_beta.js";}());
 ```
 
 
@@ -64,7 +64,7 @@ javascript:(function(){document.head.appendChild(document.createElement("script"
 
 //Editor
 var lll = setTimeout(function(){
-    javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Editor/editor.js";}());
+    javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://cdn.rawgit.com/Piperita/PD_previewLinks/master/Editor/editor.js";}());
 },3000)
 
 ```
