@@ -18,8 +18,18 @@ These buttons can be used by clicking, the cursor will then automatically be pos
 
 
 ##Using the files
-Copy and Paste the entire script into your browser's console or alternatively run the following script through GreaseMonkey:
+There are currently three stable methods of launching the script: Manually, through a bookmark or through an add-on like GreaseMonkey. It should be noted that the script stays active when using the pageLoad-functions from IntenseDebate (sorting, opening a new thread-page), it only needs to be applied once after opening the page that contains the ID-container until it is closed again. 
 
+####Manually
+Take the code from the file "editor.js" and copy it into your browser's console. The console can be opened with Ctrl+Shift+I and tabbing to the right submenu.
+
+####Bookmark
+Save the following bookmark and launch it after opening a page with the ID-commenting system. 
+```javascript
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Editor/editor.js";}());
+```
+
+####GreaseMonkey
 ```
 // ==UserScript==
 // @name        InsertNameHere
