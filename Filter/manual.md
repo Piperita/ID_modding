@@ -4,7 +4,7 @@ Before a post is sent, this script checks if any forbidden words are inside the 
 ##Activating the script
 The script can be activated by the following code in three variants:
 ``` Javascript
-javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Filter/filter.js";}());
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://cdn.rawgit.com/Piperita/PD_previewLinks/master/Filter/filter.js";}());
 ```
 1. Save the script as a bookmark and launch it upon loading an ID-Page
 2. Copy and paste it into the console (Ctrl+Shift+I)
@@ -13,7 +13,7 @@ javascript:(function(){document.head.appendChild(document.createElement("script"
 ####Script for edited posts (beta)
 Activate the following script like the 'normal' script:
 ``` Javascript
-javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Filter/filter_edit.js";}());
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://cdn.rawgit.com/Piperita/PD_previewLinks/master/Filter/filter_edit.js";}());
 ```
 This will also catch posts from the edit-textbox and change offending words. In the moment it might not start on the initil pageload or only after a circumventing prompt, like a manual start of the function editSave() from the console or a delayed start from GreaseMonkey:
 ``` Javascript
