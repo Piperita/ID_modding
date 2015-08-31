@@ -16,8 +16,19 @@ These buttons can be used by clicking, the cursor will then automatically be pos
 * [Hyperlink](http://javascript:""; "Links to the following input-area")
 * Input-Area for the link's destination
 
+####Beta-Version
+The beta-version currently has the additional functionality of automatically creating li-tags out of the #-symbol when creating ol- or ul-elements. The deviation from the main code lies in the functions orderWord() and unorderWord():
+```javascript
+function unorderWord(){                     //orderWord() for ol-elements
+ a=$('textarea')
+ a.surroundSelectedText("<ul>","</ul>")     //replace ul with ol for ol-elements
+ r=a.getSelection();
+ r=r.text.replace(/#/g, "<li>")
+ a.replaceSelectedText(r);
+}
+```
 
-##Using the files
+##Using the file
 There are currently three stable methods of launching the script: Manually, through a bookmark or through an add-on like GreaseMonkey. It should be noted that the script stays active when using the pageLoad-functions from IntenseDebate (sorting, opening a new thread-page), it only needs to be applied once after opening the page that contains the ID-container until it is closed again. 
 
 ####Manually
