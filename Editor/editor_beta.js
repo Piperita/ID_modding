@@ -40,20 +40,18 @@ function listWord(ver){
   ver.surroundSelectedText("<li>","</li>")
 }
 
-function unorderWord(){
- a=$('textarea')
- a.surroundSelectedText("<ul>","</ul>")
- r=a.getSelection();
+function unorderWord(ver){
+ ver.surroundSelectedText("<ul>","</ul>")
+ r=ver.getSelection();
  r=r.text.replace(/#/g, "<li>")
- a.replaceSelectedText(r);
+ ver.replaceSelectedText(r);
 }
 
-function orderWord(){
- a=$('textarea')
- a.surroundSelectedText("<ol>","</ol>")
- r=a.getSelection();
+function orderWord(ver){
+ ver.surroundSelectedText("<ol>","</ol>")
+ r=ver.getSelection();
  r=r.text.replace(/#/g, "<li>")
- a.replaceSelectedText(r);
+ ver.replaceSelectedText(r);
 }
 
 function linkWord(ver, link){
