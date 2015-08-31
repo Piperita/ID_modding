@@ -36,9 +36,17 @@ Take the code from the file "editor.js" and copy it into your browser's console.
 
 ####Bookmark
 Save the following bookmark and launch it after opening a page with the ID-commenting system. 
+
+######Stable version
 ```javascript
 javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Editor/editor.js";}());
 ```
+
+######Beta version
+```javascript
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/Editor/editor_beta.js";}());
+```
+
 
 ####GreaseMonkey
 ```
