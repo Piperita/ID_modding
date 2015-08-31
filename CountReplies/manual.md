@@ -6,7 +6,7 @@ Copy the code and paste them into the console (Ctrl+Shift+I), the script then sh
 Alternatively, run the following script
 ```
 //CountReplies
-javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/Piperita/PD_previewLinks/master/CountReplies/counter.js";}());
+javascript:(function(){document.head.appendChild(document.createElement("script")).src="https://cdn.rawgit.com/Piperita/PD_previewLinks/master/CountReplies/counter.js";}());
 ```
 
 ##General aspects
