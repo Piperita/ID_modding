@@ -62,7 +62,7 @@ function linkWord(ver, link){
 //------------------------------------------------------------------------
 //Loads replace-function (getSelection not working in FF for textAreas)---
 //------------------------------------------------------------------------
-document.head.appendChild(document.createElement("script")).src="https://raw.githubusercontent.com/timdown/rangyinputs/master/rangyinputs-jquery-src.js"
+document.head.appendChild(document.createElement("script")).src="https://cdn.rawgit.com/timdown/rangyinputs/master/rangyinputs-jquery-src.js"
 
 //------------------------------------------------
 //set vars to distinguish reply- and new-boxes----
