@@ -55,11 +55,7 @@ function filterWord(ver, box){
   content = content.replace('pharmacy','phar<b></b>macy');
   content = content.replace('nigger','nig<b></b>ger');
   ver[0].value = content;
-  if (box == 1){
-    postComment(0);
-  } else if (box == 2){
-    postComment(1);
-  }
+  postComment(box);
 }
 
 
@@ -134,23 +130,27 @@ var eee = setTimeout(function(){
     }  
     a[12].style.margin = "0px 3px 2px 0px"
     a[12].style.border = "1px solid black"
- 
-    $('.idc-btn_l')[2].href="javascript:filterWord(xyz,1);";
-    $('.idc-btn_l')[3].href="javascript:filterWord(zyx,2);";
+
+//-----------------------------------------
+//loads and renews filter-function---------
+//-----------------------------------------
+
+    $('#IDReplyDivSubmitLIButton')[0].href="javascript:filterWord(zyx,1);";
+    $('#IDNewThreadSubmitLI').children()[0].href="javascript:filterWord(xyz,0);";
     
     id_add_action('page_load', function(pageObj) { 
-      $('.idc-btn_l')[2].href="javascript:filterWord(xyz,1);";
-      $('.idc-btn_l')[3].href="javascript:filterWord(zyx,2);";
+      $('#IDReplyDivSubmitLIButton')[0].href="javascript:filterWord(zyx,1);";
+      $('#IDNewThreadSubmitLI').children()[0].href="javascript:filterWord(xyz,0);";
     });
     
     id_add_action('thread_page_load', function(pageObj) {
-      $('.idc-btn_l')[2].href="javascript:filterWord(xyz,1);";
-      $('.idc-btn_l')[3].href="javascript:filterWord(zyx,2);";
+      $('#IDReplyDivSubmitLIButton')[0].href="javascript:filterWord(zyx,1);";
+      $('#IDNewThreadSubmitLI').children()[0].href="javascript:filterWord(xyz,0);";
     });
     
     id_add_action('comment_post', function(commentObj) {
-      $('.idc-btn_l')[2].href="javascript:filterWord(xyz,1);";
-      $('.idc-btn_l')[3].href="javascript:filterWord(zyx,2);";
+      $('#IDReplyDivSubmitLIButton')[0].href="javascript:filterWord(zyx,1);";
+      $('#IDNewThreadSubmitLI').children()[0].href="javascript:filterWord(xyz,0);";
     });
     
     
